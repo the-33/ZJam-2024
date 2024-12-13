@@ -28,6 +28,8 @@ public class playerController : MonoBehaviour
 
     private fadeInOut fadeInOut;
 
+    public dialogBox dialogbox;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,22 +60,36 @@ public class playerController : MonoBehaviour
         switch (interactableName)
         {
             case "Wardrobe":
+                if (isDressed) { dialogbox.showDialog("Ya me he vestido"); break; }
                 fadeInOut.StartFadeSequence();
                 yield return new WaitForSeconds(1);
                 isDressed = true;
                 body.GetComponent<SpriteRenderer>().sprite = suitBody;
                 break;
             case "Shower":
+                if (isShowered) { dialogbox.showDialog("Ya me he duchado"); break; }
                 fadeInOut.StartFadeSequence();
                 yield return new WaitForSeconds(1);
                 isShowered = true;
+                isDressed = false;
                 body.GetComponent<SpriteRenderer>().sprite = nakedBody;
                 head.GetComponent<SpriteRenderer>().sprite = combedHair;
                 break;
             case "Fridge":
+                if (hasEaten) { dialogbox.showDialog("Ya he comido"); break; }
                 fadeInOut.StartFadeSequence();
                 yield return new WaitForSeconds(1);
                 hasEaten = true;
+                break;
+            case "Top":
+                fadeInOut.StartFadeSequence();
+                yield return new WaitForSeconds(1);
+                transform.position = GameObject.Find("Top").transform.parent.Find("Bottom").transform.position;
+                break;
+            case "Bottom":
+                fadeInOut.StartFadeSequence();
+                yield return new WaitForSeconds(1);
+                transform.position = GameObject.Find("Bottom").transform.parent.Find("Top").transform.position;
                 break;
 
         }
