@@ -14,6 +14,7 @@ public class dialogBox : MonoBehaviour
     {
         m_image = GetComponent<Image>();
         m_text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        m_text.text = "QUE TARDE ES, MI JEFE ME VA A MATAR";
     }
 
     // Update is called once per frame
