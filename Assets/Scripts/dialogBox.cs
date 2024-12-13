@@ -16,7 +16,6 @@ public class dialogBox : MonoBehaviour
     {
         m_image = GetComponent<Image>();
         m_text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        showDialog("");
     }
 
     // Update is called once per frame
@@ -25,19 +24,29 @@ public class dialogBox : MonoBehaviour
         
     }
 
-    void showDialog(string text)
+    public void showDialog(string text)
     {
-        m_text.text = text;
-
-        for (float i = 0; i <= fadeInSeconds; i += Time.deltaTime)
-        {
-            m_image.color = new Color(m_image.color.r, m_image.color.g, m_image.color.b, i/fadeInSeconds);
-        }
-
-        m_image.color = new Color(m_image.color.r, m_image.color.g, m_image.color.b, 1);
+        m_text.text += text;
+        StartCoroutine(fadeDialogIn());
     }
 
-    void closeDialog()
+    IEnumerator fadeDialogIn()
+    {
+        Color originalColor = m_image.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 0.3f)
+        {
+            float alpha = Mathf.Lerp(0, 1, elapsedTime / 0.3f);
+            m_image.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        m_image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 1);
+    }
+
+    public void closeDialog()
     {
         m_image.color = new Color(m_image.color.r, m_image.color.g, m_image.color.b, 0);
         m_text.text = "";
