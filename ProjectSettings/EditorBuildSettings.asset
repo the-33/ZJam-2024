@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Garage.unity
+    guid: 726e7d3eb1a1e4e45bd19fcc147ecccd
+  - enabled: 1
+    path: Assets/Scenes/Metro.unity
+    guid: 6a7158b26745f70428a1e09cb7c2a2cb
+  - enabled: 1
+    path: Assets/Scenes/Elevator.unity
+    guid: 48f400f3eb1d9f24089eafe8d25b025c
+  - enabled: 1
+    path: Assets/Scenes/BossDesk.unity
+    guid: 877297b8912ceb8439b1d40e09d57eb5
   m_configObjects: {}
