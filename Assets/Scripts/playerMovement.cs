@@ -75,6 +75,13 @@ public class playerMovement : MonoBehaviour
 
     void animationHandler()
     {
+        if (m_HorizontalInput != 0)
+        {
+            m_Animator.speed = m_SprintInput ? 1.5f : 0.8f;
+            m_Animator.SetBool("walking", true);
+        }
+        else m_Animator.SetBool("walking", false);
+
         if (m_GoingRight && m_HorizontalInput < 0)
         {
             GoingRight = false;
