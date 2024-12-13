@@ -19,6 +19,8 @@ public class playerMovement : MonoBehaviour
 
     private bool m_GoingRight;
 
+    playerController m_PlayerController;
+
     public bool GoingRight
     {
         get
@@ -40,6 +42,7 @@ public class playerMovement : MonoBehaviour
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>(); // We take the Rigidbody in the player
         m_Animator = GetComponent<Animator>(); // We take the Animator in the player
+        m_PlayerController = GetComponent<playerController>();
         m_GoingRight = true;
     }
 
@@ -57,8 +60,9 @@ public class playerMovement : MonoBehaviour
 
     void InputHandler()
     {
+        if (m_PlayerController.isInteracting) return;
         m_HorizontalInput = Input.GetAxis("Horizontal");
-        m_SprintInput = Input.GetKey(KeyCode.LeftShift);
+        if(m_PlayerController.hasEaten) m_SprintInput = Input.GetKey(KeyCode.LeftShift);
     }
 
     void movementHandler()
