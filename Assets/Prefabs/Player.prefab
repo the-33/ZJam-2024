@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3246264484732625730}
   - component: {fileID: 5793623796803067699}
   - component: {fileID: 7670720738523911267}
-  - component: {fileID: 6393461753458333178}
+  - component: {fileID: 6802433914518001093}
+  - component: {fileID: 9106862386378589284}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.94, y: -3.63, z: -1}
-  m_LocalScale: {x: 1.2652, y: 1.2652, z: 1.2652}
+  m_LocalScale: {x: 1.1421846, y: 1.1421846, z: 1.1421846}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5333416699625315756}
@@ -187,12 +188,16 @@ MonoBehaviour:
   hasEaten: 0
   suitBody: {fileID: -1958560714, guid: b73627f1b000e9f4ca88fa81b578d264, type: 3}
   nakedBody: {fileID: -595576069, guid: b73627f1b000e9f4ca88fa81b578d264, type: 3}
-  dressedState: 0
+  combedHair: {fileID: 1908004839, guid: 1e874e618947baa40b41b49a4268c544, type: 3}
   body: {fileID: 3307665655976173048}
+  head: {fileID: 5909146990035199568}
   bocadillo: {fileID: 0}
   bocadilloVOffset: 2.87
   bocadilloHoffset: 0.75
---- !u!95 &6393461753458333178
+  isInteracting: 0
+  dialogbox: {fileID: 0}
+  carWorks: 0
+--- !u!95 &6802433914518001093
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -213,6 +218,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9106862386378589284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807510414141617718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa26d22a81587c4b8e9af0ac87c37b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElement: {fileID: 0}
+  fadeDuration: 1
+  delayBetweenFades: 1
 --- !u!1 &3307665655976173048
 GameObject:
   m_ObjectHideFlags: 0

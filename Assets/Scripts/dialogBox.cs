@@ -9,8 +9,6 @@ public class dialogBox : MonoBehaviour
     private Image m_image;
     private TextMeshProUGUI m_text;
 
-    private float fadeInSeconds = 10.0f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +24,7 @@ public class dialogBox : MonoBehaviour
 
     public void showDialog(string text)
     {
+        m_text.text = "";
         m_text.text += text;
         StartCoroutine(fadeDialogIn());
     }
